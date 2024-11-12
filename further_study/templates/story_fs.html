@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Madlibs Story{% endblock %}
+
+{% block content %}
+<h2>My '{{ title }}' Story</h2>
+
+<div class="story-container">
+    <p id="story-card">{{ text }}</p>
+</div>
+{% endblock %}

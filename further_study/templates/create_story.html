@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Your Own Story{% endblock %}
+
+{% block content %}
+<h2>Create Your Own Madlib Story</h2>
+
+<div class="create-story-container">
+    <form action="{{ url_for('create_story') }}" method="post">
+        <p>
+            <label for="story_token">Story Token (unique identifier):</label>
+            <input type="text" id="story_token" name="story_token" required>
+        </p>
+        <p>
+            <label for="story_title">Story Title:</label>
+            <input type="text" id="story_title" name="story_title" required>
+        </p>
+        <p>
+            <label for="story_text">Story Text:</label>
+            <textarea id="story_text" name="story_text" required></textarea>
+        </p>
+        <p>
+            <label for="parts_of_speech">Parts of Speech (comma-separated, no spaces):</label>
+            <input type="text" id="parts_of_speech" name="parts_of_speech" required>
+        </p>
+    
+        <button type="submit">Create Story</button>
+    </form>
+</div>
+{% endblock %}
+

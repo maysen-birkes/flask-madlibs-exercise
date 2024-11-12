@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Madlibs Questions{% endblock %}
+
+{% block content %}
+<h2>Questions for '{{ title }}'</h2>
+
+<div class="container">
+    <form action="/story" class="main-form">
+        {% for prompt in prompts %}
+          <p>
+            <input class="form-inputs" name="{{ prompt }}" placeholder="{{prompt}}">
+          </p>
+        {% endfor %}
+        <input type="hidden" name="story_id" value="{{ story_id}}">
+        <button>Submit</button>
+      </form>
+</div>
+{% endblock %}
+
+

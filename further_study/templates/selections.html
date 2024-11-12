@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Madlibs Story Selection{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form action="/questions" class="main-form">
+        <select name="story_id" id="">
+            {% for story in stories %}
+                <option value="{{story.token}}">
+                    {{ story.title }}
+                </option>
+            {% endfor %}
+        </select>
+        <button>GO!</button>
+    </form>
+</div>
+{% endblock %}
